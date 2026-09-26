@@ -12,7 +12,7 @@ public class AlkalinekatsPatch implements ModInitializer {
 	public static final String MOD_ID = "alkalinekats-patch";
 
 	public static final SoundEvent SOUND = Registry.register(BuiltInRegistries.SOUND_EVENT, id("alkalinekats"),
-			SoundEvent.createFixedRangeEvent(id("alkalinekats"), 10f));
+			SoundEvent.createVariableRangeEvent(id("alkalinekats")));
 
 	@Override
 	public void onInitialize() {
