@@ -9,16 +9,17 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 
 public class AlkalinekatsPatch implements ModInitializer {
-	public static final String MOD_ID = "alkalinekats-patch";
-
-	public static final SoundEvent SOUND = Registry.register(BuiltInRegistries.SOUND_EVENT, id("alkalinekats"),
-			SoundEvent.createVariableRangeEvent(id("alkalinekats")));
 
 	@Override
 	public void onInitialize() {
+		makeSound("alkalinekats");
 	}
 
-	public static ResourceLocation id(String path) {
-		return new ResourceLocation(MOD_ID, path);
+	/**
+	 * Super easy helper method to make it easy.
+	 */
+	public static void makeSound(String path) {
+		ResourceLocation id = new ResourceLocation("alkalinekats-patch", path);
+		Registry.register(BuiltInRegistries.SOUND_EVENT, id, SoundEvent.createVariableRangeEvent(id));
 	}
 }
